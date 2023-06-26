@@ -38,6 +38,7 @@ export function Navbar() {
       <Container>
         <Menu.Item header>Task-UI</Menu.Item>
         <Menu.Item as={Link} exact='true' to="/">Home</Menu.Item>
+        <Menu.Item as={Link} exact='true' to="/reports">Reports</Menu.Item>
 
         <Menu.Item as={Link} to="/adminpage" style={adminPageStyle()}>AdminPage</Menu.Item>
         <Menu.Item as={Link} to="/userpage" style={userPageStyle()}>UserPage</Menu.Item>

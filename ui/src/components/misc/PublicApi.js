@@ -6,7 +6,58 @@ export const publicApi = {
   numberOfOrders,
   getMenus,
   createOrder,
+  getClients,
+  getClientsTopByQuantity,
+  getClientsTopByWeight,
+  createClient,
+  createItem,
+  trashItem,
 }
+
+function trashItem(itemId){
+  console.log(itemId);
+  return instance.delete(`/api/items?id=${itemId}`, {
+    headers: {
+      'Content-type': 'application/json',
+    }
+  })
+}
+function createItem(item){
+console.log(item);
+  return instance.post('/api/items', item, {
+    headers: {
+      'Content-type': 'application/json',
+    }
+  })
+}
+
+function createClient(client){
+ client = {...client, id: null,  items: [],};
+  return instance.post('/api/clients', client, {
+    headers: {
+      'Content-type': 'application/json',
+    }
+  })
+}
+function getClients(text) {
+  console.log(text);
+  const url = text ? `/api/clients?text=${text}` : '/api/clients'
+  return instance.get(url);
+
+}
+function getClientsTopByQuantity() {
+
+  const url = `/api/reports/byQuantity`;
+  return instance.get(url);
+
+}
+function getClientsTopByWeight() {
+
+  const url = `/api/reports/byWeight`;
+  return instance.get(url);
+
+}
+
 
 function numberOfUsers() {
   console.log('ateina');

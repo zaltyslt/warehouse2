@@ -9,7 +9,7 @@
     </parent>
 
     <groupId>lt.ks</groupId>
-    <artifactId>order-api</artifactId>
+    <artifactId>warehouse-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>order-api</name>
     <description>Demo food order app</description>
